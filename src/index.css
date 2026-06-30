@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #050507;
+    --bg-secondary: #0b0b10;
+    --bg-elevated: #12121a;
+    --bg-card: rgba(255,255,255,0.025);
+    --sidebar-bg: #08080c;
+    --border-subtle: rgba(255,255,255,0.07);
+    --border-medium: rgba(255,255,255,0.12);
+    --accent-indigo: #8b5cf6;
+    --accent-purple: #a855f7;
+    --accent-glow: #a855f7;
+    --accent-secondary: #c084fc;
+    --accent-cyan: #06b6d4;
+    --accent-green: #10b981;
+    --accent-amber: #f59e0b;
+    --accent-red: #ef4444;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #52525b;
+    --gradient-brand: linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #c084fc 100%);
+    --gradient-hero: radial-gradient(circle at 30% 20%, rgba(168,85,247,0.18) 0%, transparent 55%), radial-gradient(circle at 80% 80%, rgba(139,92,246,0.12) 0%, transparent 50%), #050507;
+    --shadow-glow: 0 0 50px rgba(168,85,247,0.25);
+    --shadow-glow-sm: 0 0 24px rgba(168,85,247,0.18);
+
+    --background: 240 10% 4%;
+    --foreground: 210 40% 95%;
+    --card: 240 10% 7%;
+    --card-foreground: 210 40% 95%;
+    --popover: 240 10% 5%;
+    --popover-foreground: 210 40% 95%;
+    --primary: 271 91% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 5% 12%;
+    --secondary-foreground: 210 40% 95%;
+    --muted: 240 5% 12%;
+    --muted-foreground: 215 16% 57%;
+    --accent: 240 5% 14%;
+    --accent-foreground: 210 40% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5% 12%;
+    --input: 240 5% 12%;
+    --ring: 271 91% 65%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+}
+
+@layer utilities {
+  .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+  .glass-md { background: rgba(255,255,255,0.05); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); }
+  .gradient-brand { background: var(--gradient-brand); }
+  .text-gradient { background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .glow { box-shadow: var(--shadow-glow); }
+  .card-hover { transition: all 0.2s ease; }
+  .card-hover:hover { background: rgba(255,255,255,0.04); border-color: rgba(99,102,241,0.25); transform: translateY(-1px); }
+  .input-dark {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--text-primary);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .input-dark:focus { border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99,102,241,0.12); outline: none; }
+  .input-dark::placeholder { color: var(--text-muted); }
+  .btn-primary {
+    background: var(--gradient-brand);
+    color: white; font-weight: 600;
+    transition: opacity 0.15s ease, transform 0.1s ease;
+  }
+  .btn-primary:hover { opacity: 0.92; }
+  .btn-primary:active { transform: scale(0.98); }
+  .btn-primary:disabled { opacity: 0.45; cursor: not-allowed; }
+  .btn-ghost { background: transparent; border: 1px solid rgba(255,255,255,0.08); color: var(--text-secondary); transition: all 0.15s ease; }
+  .btn-ghost:hover { background: rgba(255,255,255,0.05); color: var(--text-primary); }
+  .tag-indigo { background: rgba(99,102,241,0.12); color: #818cf8; border: 1px solid rgba(99,102,241,0.2); }
+  .tag-green { background: rgba(16,185,129,0.10); color: #34d399; border: 1px solid rgba(16,185,129,0.2); }
+  .tag-amber { background: rgba(245,158,11,0.10); color: #fcd34d; border: 1px solid rgba(245,158,11,0.2); }
+  .tag-red { background: rgba(239,68,68,0.10); color: #f87171; border: 1px solid rgba(239,68,68,0.2); }
+  .tag-cyan { background: rgba(6,182,212,0.10); color: #67e8f9; border: 1px solid rgba(6,182,212,0.2); }
+  .section-title { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
+  .animate-pulse-slow { animation: pulse 3s cubic-bezier(0.4,0,0.6,1) infinite; }
+  .animate-float { animation: float 6s ease-in-out infinite; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ===== AprovaIA 2.0 — Crystal/Sci-fi layer ===== */
+.glass-crystal {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), var(--shadow-glow-sm);
+}
+.aurora-bg {
+  position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+}
+.aurora-blob {
+  position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.35;
+  animation: aurora-drift 18s ease-in-out infinite;
+}
+@keyframes aurora-drift {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  33% { transform: translate(40px,-30px) scale(1.15); }
+  66% { transform: translate(-30px,30px) scale(0.9); }
+}
+.noise-overlay::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+@keyframes crystal-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(3deg); }
+}
+@keyframes crystal-glow {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+.crystal-shape { animation: crystal-float 7s ease-in-out infinite; }
+.crystal-glow { animation: crystal-glow 3.5s ease-in-out infinite; }
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.9; }
+}
+.star { animation: star-twinkle 4s ease-in-out infinite; }
+@keyframes text-reveal {
+  from { opacity: 0; transform: translateY(10px); filter: blur(6px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+.reveal { animation: text-reveal 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+.input-glow:focus { box-shadow: 0 0 0 3px rgba(168,85,247,0.18), var(--shadow-glow-sm); }
+.btn-magnetic { transition: transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s ease; }
+.btn-magnetic:hover { transform: translateY(-2px); box-shadow: var(--shadow-glow); }
+
+/* Dashboard 2.0 — breathing cards + reveal stagger */
+@keyframes card-breathe {
+  0%, 100% { box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 0 0px rgba(168,85,247,0); }
+  50% { box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 0 22px rgba(168,85,247,0.10); }
+}
+.card-breathe { animation: card-breathe 5s ease-in-out infinite; transition: transform 0.25s cubic-bezier(0.16,1,0.3,1); }
+.card-breathe:hover { transform: translateY(-3px); }

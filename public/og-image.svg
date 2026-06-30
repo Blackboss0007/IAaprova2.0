@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07070f"/>
+      <stop offset="100%" stop-color="#1a1040"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="80" y="80" width="1040" height="470" rx="24" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <!-- Logo -->
+  <rect x="140" y="140" width="64" height="64" rx="16" fill="url(#accent)"/>
+  <text x="172" y="184" font-family="Arial" font-weight="bold" font-size="36" fill="white" text-anchor="middle">A</text>
+  <text x="224" y="179" font-family="Arial" font-weight="bold" font-size="28" fill="white">AprovaIA</text>
+  <!-- Main headline -->
+  <text x="140" y="280" font-family="Arial" font-weight="bold" font-size="64" fill="white">Seu Mentor IA</text>
+  <text x="140" y="355" font-family="Arial" font-weight="bold" font-size="64" fill="url(#accent)">de Aprovação</text>
+  <!-- Subtitle -->
+  <text x="140" y="420" font-family="Arial" font-size="28" fill="rgba(255,255,255,0.6)">Concursos · ENEM · OAB · Vestibulares</text>
+  <!-- CTA -->
+  <rect x="140" y="460" width="280" height="56" rx="12" fill="url(#accent)"/>
+  <text x="280" y="494" font-family="Arial" font-weight="bold" font-size="22" fill="white" text-anchor="middle">Criar conta grátis</text>
+  <!-- Decorative dots -->
+  <circle cx="900" cy="315" r="120" fill="rgba(99,102,241,0.08)"/>
+  <circle cx="900" cy="315" r="80" fill="rgba(99,102,241,0.10)"/>
+  <text x="900" y="335" font-family="Arial" font-size="80" text-anchor="middle">🎯</text>
+</svg>
